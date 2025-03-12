@@ -1,0 +1,33 @@
+[package]
+name = "saunds_v2"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Audio processing
+hound = "3.5"        # WAV file handling
+rustfft = "6.1"      # Fast Fourier Transform
+dasp = { version = "0.11", features = ["signal", "interpolate", "ring_buffer"] }
+minimp3 = "0.5"      # MP3 decoding
+wav = "1.0"          # WAV encoding/decoding
+
+# Async runtime
+tokio = { version = "1.32", features = ["full"] }
+
+# Error handling
+anyhow = "1.0"
+thiserror = "1.0"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+# CLI interface for proof of concept
+clap = { version = "4.4", features = ["derive"] }
+
+# Math
+num-complex = "0.4"
+realfft = "3.3"
+
+[build-dependencies]
+pyo3-build-config = "0.19" 
